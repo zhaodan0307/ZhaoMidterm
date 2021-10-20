@@ -11,7 +11,32 @@ var teetimeSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+
+    holes: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+
+    cart: {
+        type: Number,
+        required: true,
+        trim: true
     }
+    ,
+    date: {
+        type: Date,
+        required: true,
+        trim: true
+    },
+
+    greenFee: {
+        type: Number,
+        required: false,
+        trim: true
+    }
+
 
 })
 

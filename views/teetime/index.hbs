@@ -1,0 +1,17 @@
+<h1>Teetimes</h1>
+<a href="/teetime/create">Add a New Teetime</a>
+
+<section class="row card-group">
+    {{#each teetime}}
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-4 text-center h-100">
+                <div class="card-body">
+                    <h5>{{this.golferName}}</h5>
+                    <a href="/artists/edit/{{this._id}}" class="btn btn-info text-light">Edit</a>
+                    <!--这里，直接写了一个javascript，然后如果function confirmDelete return true的话，那么就去delete这个页面-->
+                    <a href="/artists/delete/{{this._id}}" class="btn btn-danger" onclick="return confirmDelete()">Delete</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</section>
