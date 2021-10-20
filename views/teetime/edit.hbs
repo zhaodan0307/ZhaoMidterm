@@ -6,10 +6,10 @@
         <input class="form-control" name="golferName" id="golferName" min="0" required value="{{teetime.golferName}}"/>
 
         <label for="holes" class="control-label col-2">holes: *</label>
-        <input class="form-control" name="holes" id="holes" required type="number" min="0" value="{{teetime.holes}}"/>
+        <input class="form-control" name="holes" id="holes" required type="number" min="9" max="18" value="{{teetime.holes}}"/>
 
         <label for="cart" class="control-label col-2">cart: *</label>
-        <input class="form-control" name="cart" id="cart" required type="number" min="0" value="{{teetime.cart}}"/>
+        <input class="form-control" name="cart" id="cart" required type="number" min="0" max="1" value="{{teetime.cart}}"/>
 
         <label for="date" class="control-label col-2">date: *</label>
         <input class="form-control" type = "date" name="date" id="date" required value="{{teetime.date}}"/>
