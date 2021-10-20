@@ -3,13 +3,34 @@
 <form method="post">
     <fieldset class="form-group">
         <label for="golferName" class="control-label col-2">golferName: *</label>
-        <input class="form-control" name="golferName" id="golferName" min="0" required />
+        <input class="form-control" name="golferName" id="golferName" min="0" required type="text" />
 
         <label for="holes" class="control-label col-2">holes: *</label>
-        <input class="form-control" name="holes" id="holes" required type="number" min="0"/>
+        <input class="form-control" name="holes" id="holes" required type="number" list="list"/>
+        <datalist id="list">
+
+            <option value="9">
+            <option value="10">
+            <option value="11">
+            <option value="12">
+            <option value="13">
+            <option value="14">
+            <option value="15">
+            <option value="16">
+            <option value="17">
+            <option value="18">
+
+        </datalist>
 
         <label for="cart" class="control-label col-2">cart: *</label>
-        <input class="form-control" name="cart" id="cart" required type="number" min="0"/>
+        <input class="form-control" name="cart" id="cart" required type="number" id="list2"/>
+        <datalist id="list2">
+
+            <option value="0">
+            <option value="1">
+
+
+        </datalist>
 
         <label for="date" class="control-label col-2">date: *</label>
         <input class="form-control" type = "date" name="date" id="date" required />

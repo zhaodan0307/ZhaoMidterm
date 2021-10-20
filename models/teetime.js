@@ -20,7 +20,7 @@ var teetimeSchema = new mongoose.Schema({
     },
 
     cart: {
-        type: Number,
+        type:Number,
         required: true,
         trim: true
     }
