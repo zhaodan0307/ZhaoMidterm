@@ -45,6 +45,88 @@ router.get('/create',(req,res) => {
 })
 
 
+// POST: /teetime/create => process form submission & save new Teetime document
+
+router.post('/create', (req, res) => {
+    // use Mongoose model to create a new Teetime document
+    Teetime.create({
+        //read the input from our form called name
+        golferName: req.body.golferName,
+        holes: req.body.holes,
+        cart: req.body.cart,
+        date: req.body.date,
+        greenFee: req.body.greenFee
+
+
+
+    }, (err, newArtist) => {
+        if (err) {
+            console.log(err)
+            res.end(err)
+        }
+        else { // save successful; update artists list view
+            //go back to main artists page
+            res.redirect('/teetime')
+        }
+    })
+})
+
+
+
+
+// GET: /artists/edit/abc123 => show pre-populated Edit form
+router.get('/edit/:_id', (req, res) => {
+    // read _id from url param
+    let _id = req.params._id
+
+    //找到要edit的id，然后去渲染那个edit
+    // query the db for the selected Artist document
+    Teetime.findById(_id, (err, teetime) => {
+        if (err) {
+            console.log(err)
+            res.end(err)
+        }
+        else {
+            // load the edit view and pass the selected Artist doc to it for display
+            res.render('teetime/edit', {
+                title: 'Teetime Details',
+                teetime: teetime
+            })
+        }
+    })
+})
+
+
+
+
+// POST: /teetime/edit/abc123 => update existing Artist doc with values from form submission
+router.post('/edit/:_id', (req, res) => {
+    // get document id from url param
+    let _id = req.params._id
+
+    // Use Mongoose findByIdAndUpdate to save changes to existing doc
+    Teetime.findByIdAndUpdate({ _id: _id}, {
+        'golferName': req.body.golferName,
+        'holes': req.body.holes,
+        'cart': req.body.cart,
+        'date': req.body.date,
+        'greenFee': req.body.greenFee
+
+
+
+    }, null,(err, teetime) => {
+        if (err) {
+            console.log(err)
+            res.end(err)
+        }
+        else {
+            res.redirect('/teetime')
+        }
+    })
+})
+
+
+
 
 
 //make public

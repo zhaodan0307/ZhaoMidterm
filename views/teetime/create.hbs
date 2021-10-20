@@ -3,19 +3,19 @@
 <form method="post">
     <fieldset class="form-group">
         <label for="golferName" class="control-label col-2">golferName: *</label>
-        <input class="form-control" name="golferName" id="golferName"  required />
+        <input class="form-control" name="golferName" id="golferName" min="0" required />
 
         <label for="holes" class="control-label col-2">holes: *</label>
-        <input class="form-control" name="holes" id="holes" required type="number"/>
+        <input class="form-control" name="holes" id="holes" required type="number" min="0"/>
 
         <label for="cart" class="control-label col-2">cart: *</label>
-        <input class="form-control" name="cart" id="cart" required type="number"/>
+        <input class="form-control" name="cart" id="cart" required type="number" min="0"/>
 
         <label for="date" class="control-label col-2">date: *</label>
         <input class="form-control" type = "date" name="date" id="date" required />
 
         <label for="greenFee" class="control-label col-2">greenFee: *</label>
-        <input class="form-control" type = "number" step="any" name="greenFee" id="greenFee" />
+        <input class="form-control" type = "number" step="any" name="greenFee" id="greenFee" min="0"/>
 
     </fieldset>
     <div class="offset-2">
